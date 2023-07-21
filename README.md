@@ -1,21 +1,5 @@
 ---
-jupyter:
-  kernelspec:
-    display_name: Python 3 (ipykernel)
-    language: python
-    name: python3
-  language_info:
-    codemirror_mode:
-      name: ipython
-      version: 3
-    file_extension: .py
-    mimetype: text/x-python
-    name: python
-    nbconvert_exporter: python
-    pygments_lexer: ipython3
-    version: 3.10.9
-  nbformat: 4
-  nbformat_minor: 5
+open project_notebook for better experience: <a href="https://github.com/kooroshkz/math_grades_analysis/blob/main/project_notebook.ipynb">project_notebook.ipynb</a>
 ---
 
 <div class="cell markdown">
