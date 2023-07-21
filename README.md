@@ -1,10 +1,14 @@
 ---
-Open Project Notebook for better experience: [project_notebook.ipynb](https://github.com/kooroshkz/math_grades_analysis/blob/main/project_notebook.ipynb)
+title: Exploring Academic Performance in General Mathematics 1
+description: A Case Study of Students at AmirKabir University of Technology
+by: Koorosh Komeilizadeh
 ---
+
+Open Project Notebook for a better experience: [project_notebook.ipynb](https://github.com/kooroshkz/math_grades_analysis/blob/main/project_notebook.ipynb)
 
 <div class="cell markdown">
 
-<img src="https://www.irangi.org/uploads/images/4_1560089256_1291127534.png" style="display: block;margin-left: auto;margin-right: auto;width: 20%;">
+<img src="https://www.irangi.org/uploads/images/4_1560089256_1291127534.png" style=".invert{  filter: invert(0%);};display: block;margin-left: auto;margin-right: auto;width: 20%;">
 
 </div>
 
