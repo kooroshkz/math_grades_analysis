@@ -1,5 +1,5 @@
 ---
-open project_notebook for better experience: <a href="https://github.com/kooroshkz/math_grades_analysis/blob/main/project_notebook.ipynb">project_notebook.ipynb</a>
+Open Project Notebook for better experience: [project_notebook.ipynb](https://github.com/kooroshkz/math_grades_analysis/blob/main/project_notebook.ipynb)
 ---
 
 <div class="cell markdown">
