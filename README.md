@@ -124,23 +124,6 @@ merged_df = pd.concat(all_sheets.values(), ignore_index=True)
 merged_df
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -464,20 +447,6 @@ merged_df
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -734,22 +703,6 @@ encoded_dict.T
 ```
 
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -834,22 +787,6 @@ cleaned_df
 ```
 
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1072,21 +1009,6 @@ df[["mid","final"]].describe()
 
 
 
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1484,21 +1406,6 @@ df.head()
 
 
 
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1870,8 +1777,18 @@ In conclusion, the research sheds light on the complex dynamics of student grade
     We have compiled and provided a clean dataset of grades, meticulously organized and free from errors or inconsistencies, specifically intended for future research purposes. This dataset serves as a valuable resource for researchers and educators seeking to analyze and explore various aspects of academic performance and related factors.
 
 <a name="more"></a>
-### 6.3 Further researches
 With the help of data processing, including data transfer from Excel to CSV, removal of redundant entries, standardization of the data frame into English, and elimination of non-numeric data, we have facilitated the ability for researchers to further examine the dataset more easily. Those interested in in-depth analysis can now delve into the data with greater ease and efficiency for their research purposes.
+
+**In addition to the initial analysis, we can further explore the data with the following potential items:**
+- **Fraud Detection based on Grade Records:**Implementing algorithms and statistical methods to identify any anomalies or suspicious patterns in the grades data that might indicate academic fraud or misconduct.
+
+- **Student Clustering:** Utilizing clustering techniques to group students based on similar academic performance, study habits, or other relevant factors. This can provide valuable insights into different student profiles and help personalize educational approaches.
+
+- **More Accurate Professors' Performance Analysis:** Conducting a more comprehensive evaluation of professors' performance by identifying and handling unusual grade distributions. This can involve investigating grade inflation, grading consistency, and other factors affecting the quality of education.
+
+- **Trend Analysis over Time:** Analyzing the data across multiple academic years to uncover long-term trends and patterns in student performance, course popularity, and other relevant metrics.
+
+- **Predictive Modeling:** Building predictive models to forecast future student performance, course enrollments, or other key indicators. This can aid in proactive decision-making and resource planning.
 
 <h4 style="text-align: center">Thanks for your attention</h4>
 
