@@ -52,6 +52,7 @@
     - [&nbsp;&nbsp;6.1 Project results](#results)
     - [&nbsp;&nbsp;6.2 Answer to goals](#goalansw)
     - [&nbsp;&nbsp;6.3 Further researches ](#more)
+    - [&nbsp;&nbsp;6.4 Contact ane update project ](#updt)
 
 <a name="Preview"></a>
 ## 1- Preview
