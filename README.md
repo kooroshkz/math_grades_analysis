@@ -1095,7 +1095,7 @@ plt.show()
     
 
 
-$**$The resulting scatter plot visualizes the relationship between 'mid' and 'final' grades while providing color-coded insights into the normalized final grades of the students. $**$
+The resulting scatter plot visualizes the relationship between 'mid' and 'final' grades while providing color-coded insights into the normalized final grades of the students. 
 
 <a name="gradbyp"></a>
 ### 3.2 Grades by Professors
@@ -1164,7 +1164,7 @@ plt.show()
     
 
 
-$**$ The resulting bar plot visualizes the average final grade for each professor, with colors indicating the relative strength of the normalized grades. $**$
+ The resulting bar plot visualizes the average final grade for each professor, with colors indicating the relative strength of the normalized grades. 
 
 #### 3D vectorization
 
@@ -1201,7 +1201,7 @@ plt.show()
     
 
 
-$**$ The resulting 3D scatter plot visualizes the relationship between 'mid', 'final', and professors. Each professor is represented by a unique color, and their corresponding names are shown on the colorbar for easy identification. $**$
+ The resulting 3D scatter plot visualizes the relationship between 'mid', 'final', and professors. Each professor is represented by a unique color, and their corresponding names are shown on the colorbar for easy identification. 
 
 <a name="stu"></a>
 ## 4- Correlation of Clusters with Grades
@@ -1274,7 +1274,7 @@ plt.show()
     
 
 
-$**$ The resulting bar plot visualizes the ranking of majors based on their average final grades. Each major is represented by a colored bar, and the corresponding average final grade is annotated on top of each bar. $**$
+ The resulting bar plot visualizes the ranking of majors based on their average final grades. Each major is represented by a colored bar, and the corresponding average final grade is annotated on top of each bar. 
 
 <a name="mmf"></a>
 ### 4.3 Majors on Mid-Final Plot
@@ -1306,7 +1306,7 @@ plt.show()
     
 
 
-$**$The resulting scatter plot visualizes the relationship between 'mid' and 'final' grades for each major, with each major's data points represented by a different color from the 'viridis' colormap. The legend allows you to identify each major based on its unique color. The grid lines further aid in interpreting the data.$**$
+The resulting scatter plot visualizes the relationship between 'mid' and 'final' grades for each major, with each major's data points represented by a different color from the 'viridis' colormap. The legend allows you to identify each major based on its unique color. The grid lines further aid in interpreting the data.
 
 <a name="int"></a>
 ### 4. Native and International Students
@@ -1387,7 +1387,7 @@ plt.show()
     
 
 
-$**$ So, it can be concluded that international students may have slightly lower grades in math compared to native students. $**$
+ So, it can be concluded that international students may have slightly lower grades in math compared to native students. 
 
 <a name="ml"></a>
 ## 5- Machine Learning Model
@@ -1558,7 +1558,8 @@ model.fit(slrm_X_train, slrm_y_train)
 slrm_y_test_pred = model.predict(slrm_X_test)
 ```
 
-What we are looking for are the values of $w$ (Weight) and $b$ (Bias) to place in our simple linear regression model:
+What we are looking for are the values of $w$ (Weight) and $b$ (Bias) to place in our simple linear regression model:<br>
+
 $$ f_{w,b}(x) = wx + b \tag{1}$$
 
 Scikit-learn will present this values after calculatoin as coefficient for $w$ and intercept for $b$ by $(w,b) = $`(model.coef_ , model.intercept_)`
@@ -1601,7 +1602,7 @@ plt.show()
     
 
 
-$**$ The resulting figure will show two subplots, one for testing data and the other for training data, with the regression line plotted over the data points in both cases. This allows for a visual comparison between the performance of the simple linear regression model on the testing and training data. $**$
+ The resulting figure will show two subplots, one for testing data and the other for training data, with the regression line plotted over the data points in both cases. This allows for a visual comparison between the performance of the simple linear regression model on the testing and training data. 
 
 #### Calculate error metrics on the testing set
 Calculating error metrics on the testing set is a crucial step in assessing how well a machine learning model performs on unseen data. Common metrics include Mean Absolute Error (MAE), Mean Squared Error (MSE) and R2-score for regression. These metrics help in model evaluation, comparison, and fine-tuning to build more accurate and reliable machine learning models.
@@ -1750,7 +1751,7 @@ plt.show()
     
 
 
-$**$The resulting plot will show the actual final grades as blue points and the MLRM curve in red, representing the predicted final grades based on the 'mid' values. The smooth curve provides a visual representation of how the model predicts the 'final' grades as the 'mid' values change.$**$
+The resulting plot will show the actual final grades as blue points and the MLRM curve in red, representing the predicted final grades based on the 'mid' values. The smooth curve provides a visual representation of how the model predicts the 'final' grades as the 'mid' values change.
 
 <a name="end"></a>
 ## 6- Conclusion 
