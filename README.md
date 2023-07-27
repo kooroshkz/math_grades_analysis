@@ -1790,6 +1790,27 @@ With the help of data processing, including data transfer from Excel to CSV, rem
 
 - **Predictive Modeling:** Building predictive models to forecast future student performance, course enrollments, or other key indicators. This can aid in proactive decision-making and resource planning.
 
+<a name="updt"></a>
+### 6.4 Contact and Update project
+
+To continue contributing to the project or explore opportunities for future collaborations, I invite you to actively participate by creating a pull request on the designated GitHub 
+
+Repository: [kooroshkz/math_grades_analysis](https://github.com/kooroshkz/math_grades_analysis)
+
+Your contributions and feedback are highly valued, and together we can enhance the analysis and uncover valuable insights from the data.
+
+If you have any questions, suggestions, or innovative ideas, don't hesitate to reach out to me directly:
+
+Contact:
+
+Email: [kkomeilizadeh@gmail.com](mailto:kkomeilizadeh@gmail.com)
+
+Linkedin: [Koorosh Komeilizadeh](https://www.linkedin.com/in/kooroshkz/)
+
+I look forward to collaborating with you and making meaningful advancements in the project. Let's work together to excel in the realm of data analysis!
+
+
+
 <h4 style="text-align: center">Thanks for your attention</h4>
 
 <h6 style="text-align: center">Proudly presented by Koorosh Komeilizade</h6>
