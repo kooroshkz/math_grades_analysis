@@ -1782,7 +1782,7 @@ In conclusion, the research sheds light on the complex dynamics of student grade
 With the help of data processing, including data transfer from Excel to CSV, removal of redundant entries, standardization of the data frame into English, and elimination of non-numeric data, we have facilitated the ability for researchers to further examine the dataset more easily. Those interested in in-depth analysis can now delve into the data with greater ease and efficiency for their research purposes.
 
 **In addition to the initial analysis, we can further explore the data with the following potential items:**
-- **Fraud Detection based on Grade Records:**Implementing algorithms and statistical methods to identify any anomalies or suspicious patterns in the grades data that might indicate academic fraud or misconduct.
+- **Fraud Detection based on Grade Records:** Implementing algorithms and statistical methods to identify any anomalies or suspicious patterns in the grades data that might indicate academic fraud or misconduct.
 
 - **Student Clustering:** Utilizing clustering techniques to group students based on similar academic performance, study habits, or other relevant factors. This can provide valuable insights into different student profiles and help personalize educational approaches.
 
