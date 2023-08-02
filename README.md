@@ -1,4 +1,4 @@
-<img src="project_notebook_plots/AUTlogo/autlogo.png" style="display: block;margin-left: auto;margin-right: auto;width: 30%;">
+<img src="project_notebook_files/AUTlogo/autlogo.png" style="display: block;margin-left: auto;margin-right: auto;width: 30%;">
 
 <h2 style="text-align: center;">Exploring Academic Performance in General Mathematics 1</h2>
 <h3 style="text-align: center;">A Case Study of Students at AmirKabir University of Technology</h3>
@@ -22,9 +22,19 @@
   </a>
 </div>
 
-
 ## Project Introduction
 <p>In this project, our primary objective is to conduct a meticulous analysis of student and instructor performance during the grading process for General Mathematics 1 at AmirKabir University of Technology for the 1401 academic year. Leveraging a dataset generously provided by the esteemed Faculty of Mathematics and Computer Science, we will employ advanced data retrieval and cleaning techniques to ensure data accuracy and consistency. By scrutinizing the information meticulously, we aim to discern insightful trends and patterns that can shed light on the efficacy of the grading system and identify areas for potential improvement. Our findings will serve as a valuable resource for enhancing the overall educational experience and fostering an environment of academic excellence at the university.</p>
+
+### Project Contributors
+**[Koorosh Komeilizadeh](https://www.linkedin.com/in/kooroshkz/)** - Author and Analyst <br>
+DSAI Undergraduate Student at Leiden University
+
+**[Behzad Najafi Saghezchi](https://aut.ac.ir/cv/2105/BEHZAD%20NAJAFI%20SAGHEZCHI)** - Reviewer <br>
+Assistant Professor at AmirKabir University of Technology
+
+**[Farzad Didehvar](https://aut.ac.ir/cv/2125/Farzad%20Didehvar)** - Reviewer <br>
+Assistant Professor at AmirKabir University of Technology
+
 
 ## Outlines
 - [1 Preview](#Preview)
@@ -1091,7 +1101,7 @@ plt.show()
 
 
     
-![png](project_notebook_plots/project_notebook_37_0.png)
+![png](project_notebook_files/plots/project_notebook_37_0.png)
     
 
 
@@ -1160,7 +1170,7 @@ plt.show()
 
 
     
-![png](project_notebook_plots/project_notebook_42_0.png)
+![png](project_notebook_files/plots/project_notebook_42_0.png)
     
 
 
@@ -1197,7 +1207,7 @@ plt.show()
 
 
     
-![png](project_notebook_plots/project_notebook_46_0.png)
+![png](project_notebook_files/plots/project_notebook_46_0.png)
     
 
 
@@ -1270,7 +1280,7 @@ plt.show()
 
 
     
-![png](project_notebook_plots/project_notebook_54_0.png)
+![png](project_notebook_files/plots/project_notebook_54_0.png)
     
 
 
@@ -1302,7 +1312,7 @@ plt.show()
 
 
     
-![png](project_notebook_plots/project_notebook_58_0.png)
+![png](project_notebook_files/plots/project_notebook_58_0.png)
     
 
 
@@ -1359,7 +1369,7 @@ plt.show()
 
 
     
-![png](project_notebook_plots/project_notebook_65_0.png)
+![png](project_notebook_files/plots/project_notebook_65_0.png)
     
 
 
@@ -1383,7 +1393,7 @@ plt.show()
 
 
     
-![png](project_notebook_plots/project_notebook_67_0.png)
+![png](project_notebook_files/plots/project_notebook_67_0.png)
     
 
 
@@ -1598,7 +1608,7 @@ plt.show()
 
 
     
-![png](project_notebook_plots/project_notebook_86_0.png)
+![png](project_notebook_files/plots/project_notebook_86_0.png)
     
 
 
@@ -1747,7 +1757,7 @@ plt.show()
 
 
     
-![png](project_notebook_plots/project_notebook_108_0.png)
+![png](project_notebook_files/plots/project_notebook_108_0.png)
     
 
 

@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<img src="project_notebook_files/AUTlogo/autlogo.png" style="display: block;margin-left: auto;margin-right: auto;width: 30%;">
+<h2 style="text-align: center;">Exploring Academic Performance in General Mathematics 1</h2>
+<h3 style="text-align: center;">A Case Study of Students at AmirKabir University of Technology</h3>
+<h4 style="text-align: center;">by Koorosh Komeilizadeh</h4>
+<div style="text-align: center;">
+  <a href="mailto:kkomeilizadeh@gmail.com" target="_blank">
+    <i class="fa fa-envelope" style="font-size: 24px; color: #808080;"></i>
+  </a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://kooroshkz.com/" target="_blank">
+    <i class="fa fa-globe" style="font-size: 24px; color: #808080;"></i>
+  </a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/kooroshkz" target="_blank">
+    <i class="fa fa-github" style="font-size: 24px; color: #808080;"></i>
+  </a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://www.linkedin.com/in/kooroshkz/" target="_blank">
+    <i class="fa fa-linkedin" style="font-size: 24px; color: #808080;"></i>
+  </a>
+</div>
+<h2 id="project-introduction">Project Introduction</h2>
+<p>In this project, our primary objective is to conduct a meticulous analysis of student and instructor performance during the grading process for General Mathematics 1 at AmirKabir University of Technology for the 1401 academic year. Leveraging a dataset generously provided by the esteemed Faculty of Mathematics and Computer Science, we will employ advanced data retrieval and cleaning techniques to ensure data accuracy and consistency. By scrutinizing the information meticulously, we aim to discern insightful trends and patterns that can shed light on the efficacy of the grading system and identify areas for potential improvement. Our findings will serve as a valuable resource for enhancing the overall educational experience and fostering an environment of academic excellence at the university.</p>
+<h3 id="project-contributors">Project Contributors</h3>
+<p><strong><a href="https://www.linkedin.com/in/kooroshkz/">Koorosh Komeilizadeh</a></strong> - Author and Analyst <br>
+DSAI Undergraduate Student at Leiden University</p>
+<p><strong><a href="https://aut.ac.ir/cv/2105/BEHZAD%20NAJAFI%20SAGHEZCHI">Behzad Najafi Saghezchi</a></strong> - Reviewer <br>
+Assistant Professor at AmirKabir University of Technology</p>
+<p><strong><a href="https://aut.ac.ir/cv/2125/Farzad%20Didehvar">Farzad Didehvar</a></strong> - Reviewer <br>
+Assistant Professor at AmirKabir University of Technology</p>
+<h2 id="outlines">Outlines</h2>
+<ul>
+<li><a href="#Preview">1 Preview</a>
+<ul>
+<li><a href="#Dataset">  1.1 Dataset</a></li>
+<li><a href="#Goals">  1.2 Goals</a></li>
+<li><a href="#Tools">  1.3 Tools</a></li>
+<li><a href="#bio">  1.4 Author and Analyst</a></li>
+</ul>
+</li>
+<li><a href="#Data_Processing">2 Data Processing</a>
+<ul>
+<li><a href="#importdata">  2.1 Import Data</a></li>
+<li><a href="#clean">  2.2 Data Cleaning</a></li>
+<li><a href="#csvout">  2.2 Data Output to CSV</a></li>
+</ul>
+</li>
+<li><a href="#visual">3 Data Visualisation</a>
+<ul>
+<li><a href="#Overview">  3.1 Data Overview</a></li>
+<li><a href="#gradbyp">  3.2 Grades by Professors</a></li>
+</ul>
+</li>
+<li><a href="#stu">4 Correlation of Clusters with Grades</a>
+<ul>
+<li><a href="#major">  4.1 Correlation between majors and grades</a></li>
+<li><a href="#mean">  4.2 Mean math grades for majors</a></li>
+<li><a href="#mmf">  4.3 Majors on Mid-Final Plot</a></li>
+<li><a href="#int">  4.3 Native and International Students</a></li>
+</ul>
+</li>
+<li><a href="#ml">5 Machine Learning Model</a>
+<ul>
+<li><a href="#mldp">  5.1 Data Processing</a></li>
+<li><a href="#slrm">  5.2 Simple Linear Regression Model</a></li>
+<li><a href="#mlrm">  5.3 Multi Linear Regression Model</a></li>
+</ul>
+</li>
+<li><a href="#end">6 Conclusion </a>
+<ul>
+<li><a href="#results">  6.1 Project results</a></li>
+<li><a href="#goalansw">  6.2 Answer to goals</a></li>
+<li><a href="#more">  6.3 Further researches </a></li>
+<li><a href="#updt">  6.4 Contact ane update project </a></li>
+</ul>
+</li>
+</ul>
+<p><a name="Preview"></a></p>
+<h2 id="1--preview">1- Preview</h2>
+<p><a name="Dataset"></a></p>
+<h3 id="11-dataset">1.1 Dataset</h3>
+<p>The Faculty of Mathematics and Computer Science at AmirKabir University of Technology provides reports in Excel format, transparently disclosing students' detailed grades for each semester. Our objective is to import this data into a data frame, perform data cleaning, and eliminate any outliers to conduct appropriate data analysis. The dataset pertains to General Mathematics 1 for the 1401 academic year at AmirKabir University of Technology</p>
+<p><a name="Goals"></a></p>
+<h3 id="12-goals">1.2 Goals</h3>
+<pre><code>- Understanding Grade Distribution of Students.
+- Exploring the Correlation between Instructors and Average Grades.
+- Investigating the Relationship Between Students' Majors and Grade Status.
+- Finding the relationships between international and native students' grades.
+- Predicting Final Grades based on Midterm and Homework Scores.
+- Providing a Clean Dataset of Grades for Future Research Purposes.
+</code></pre>
+<p><a name="Tools"></a></p>
+<h3 id="13-tools">1.3 Tools</h3>
+<ul>
+<li>
+<h5 id="pandas">Pandas</h5>
+</li>
+</ul>
+<p>Utilized to convert the data into a data frame format, enabling efficient data cleaning and storage.</p>
+<ul>
+<li>
+<h5 id="numpy">Numpy</h5>
+Employed for advanced mathematical functions and array operations.</li>
+<li>
+<h5 id="matplotlib">Matplotlib</h5>
+Used for data visualization and generating various types of plots and graphs to better understand the data.</li>
+<li>
+<h5 id="scikit-learn">Scikit-learn</h5>
+Applied to develop Linear regression models for predictive analysis and Encoding Labels for non-numeric datas</li>
+</ul>
+<p><a name="bio"></a></p>
+<h3 id="14-author-and-analyst">1.4 Author and Analyst</h3>
+<h4 id="koorosh-komeilizadeh">Koorosh Komeilizadeh</h4>
+<h5 id="data-science-and-artificial-intelligence-brundergraduate-student-at-leiden-university">Data Science and Artificial Intelligence <br>undergraduate student at Leiden University</h5>
+<p>Passionate Data Science &amp; AI student with expertise in Python, Machine Learning, and Data Analysis. Eager to explore innovative applications of AI and committed to driving data-driven solutions for impactful research.</p>
+<p>Email : kkomeilizadeh@gmail.com<br>Website : <a href="https://kooroshkz.com">www.kooroshkz.com</a><br>Github &amp; LinkedIn : kooroshkz</p>
+<p><a name="Data_Processing"></a></p>
+<h2 id="2--data-processing">2- Data Processing</h2>
+<p>Data processing is a crucial step in data analysis that plays a pivotal role in ensuring the accuracy, reliability, and meaningfulness of the results. In any data-driven project, raw data often contains noise, inconsistencies, and missing values, making it challenging to draw insightful conclusions directly. Data processing involves a series of techniques, such as data cleaning, transformation, integration, and normalization, aimed at refining the raw data into a usable and consistent format. By addressing data quality issues, data processing enhances the integrity of the analysis, reduces bias, and enables more robust statistical methods.</p>
+<p><a name="importdata"></a></p>
+<h3 id="21-import-data">2.1 Import Data</h3>
+<h4 id="pandas">Pandas</h4>
+<p>Pandas is a popular Python library widely used for data manipulation and analysis. It provides powerful data structures and functions to efficiently work with structured data. One of its core data structures is the DataFrame, which is essentially a two-dimensional, labeled data structure resembling a table or spreadsheet. The DataFrame allows data to be organized in rows and columns, where each column can have a specific data type. It is versatile and can handle different types of data, including CSV, JSON, SQL databases, and Excel files.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment"># Read all sheets from the "grades.xlsx" Excel file into a dictionary of DataFrames</span>
+all_sheets = pd.read_excel(<span class="hljs-string">"grades.xlsx"</span>, sheet_name=<span class="hljs-literal">None</span>)
+
+<span class="hljs-comment"># Concatenate all DataFrames in the dictionary into a single DataFrame</span>
+merged_df = pd.concat(all_sheets.values(), ignore_index=<span class="hljs-literal">True</span>)
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment"># Shows a preview of DataFrame</span>
+merged_df
+</div></code></pre>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>گروه درس</th>
+      <th>شماره دانشجو</th>
+      <th>تکلیف1</th>
+      <th>تکلیف2</th>
+      <th>تکلیف3</th>
+      <th>تکلیف4</th>
+      <th>تکلیف5</th>
+      <th>تکلیف6</th>
+      <th>تکلیف7</th>
+      <th>تکلیف8</th>
+      <th>...</th>
+      <th>پایانترم از 9</th>
+      <th>میانترم از7</th>
+      <th>نهایی 1</th>
+      <th>پایانترم از13</th>
+      <th>میانترم از3</th>
+      <th>نهایی2</th>
+      <th>نمره تدریس یار</th>
+      <th>کلاسی استاد</th>
+      <th>ماکسیمم</th>
+      <th>استاد</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>40027008</td>
+      <td>40.0</td>
+      <td>33.0</td>
+      <td>0.0</td>
+      <td>35.0</td>
+      <td>40.0</td>
+      <td>40</td>
+      <td>35</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.5</td>
+      <td>2.2</td>
+      <td>4.93</td>
+      <td>0.722222</td>
+      <td>0.942857</td>
+      <td>3.895079</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4.930000</td>
+      <td>دکتر کیانی</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>40113901</td>
+      <td>37.0</td>
+      <td>33.0</td>
+      <td>38.0</td>
+      <td>0.0</td>
+      <td>40.0</td>
+      <td>40</td>
+      <td>40</td>
+      <td>40.0</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>3.1</td>
+      <td>8.78</td>
+      <td>4.333333</td>
+      <td>1.328571</td>
+      <td>8.341905</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8.780000</td>
+      <td>دکتر کیانی</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>40122045</td>
+      <td>24.0</td>
+      <td>32.0</td>
+      <td>40.0</td>
+      <td>20.0</td>
+      <td>15.0</td>
+      <td>40</td>
+      <td>35</td>
+      <td>18.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>4.3</td>
+      <td>7.54</td>
+      <td>1.444444</td>
+      <td>1.842857</td>
+      <td>5.527302</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>7.540000</td>
+      <td>دکتر کیانی</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>40122046</td>
+      <td>0.0</td>
+      <td>36.0</td>
+      <td>40.0</td>
+      <td>40.0</td>
+      <td>40.0</td>
+      <td>40</td>
+      <td>35</td>
+      <td>40.0</td>
+      <td>...</td>
+      <td>1.9</td>
+      <td>0.1</td>
+      <td>4.71</td>
+      <td>2.744444</td>
+      <td>0.042857</td>
+      <td>5.497302</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.497302</td>
+      <td>دکتر کیانی</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>40122047</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>40</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>1.1</td>
+      <td>1.50</td>
+      <td>0.000000</td>
+      <td>0.471429</td>
+      <td>0.871429</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.500000</td>
+      <td>دکتر کیانی</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1276</th>
+      <td>19</td>
+      <td>40132012</td>
+      <td>0.0</td>
+      <td>40.0</td>
+      <td>40.0</td>
+      <td>36.0</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>35</td>
+      <td>22.0</td>
+      <td>...</td>
+      <td>3.5</td>
+      <td>3.9</td>
+      <td>9.48</td>
+      <td>5.055556</td>
+      <td>1.671429</td>
+      <td>8.806984</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>9.480000</td>
+      <td>دکترشریعتی</td>
+    </tr>
+    <tr>
+      <th>1277</th>
+      <td>19</td>
+      <td>40132013</td>
+      <td>25.0</td>
+      <td>20.0</td>
+      <td>20.0</td>
+      <td>37.0</td>
+      <td>40.0</td>
+      <td>40</td>
+      <td>40</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>6.3</td>
+      <td>0.0</td>
+      <td>8.52</td>
+      <td>9.100000</td>
+      <td>0.000000</td>
+      <td>11.320000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>11.320000</td>
+      <td>دکترشریعتی</td>
+    </tr>
+    <tr>
+      <th>1278</th>
+      <td>19</td>
+      <td>40132021</td>
+      <td>40.0</td>
+      <td>34.0</td>
+      <td>40.0</td>
+      <td>40.0</td>
+      <td>40.0</td>
+      <td>40</td>
+      <td>40</td>
+      <td>40.0</td>
+      <td>...</td>
+      <td>8.6</td>
+      <td>5.6</td>
+      <td>17.34</td>
+      <td>12.422222</td>
+      <td>2.400000</td>
+      <td>17.962222</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>17.962222</td>
+      <td>دکترشریعتی</td>
+    </tr>
+    <tr>
+      <th>1279</th>
+      <td>19</td>
+      <td>40132033</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>40.0</td>
+      <td>38.0</td>
+      <td>35.0</td>
+      <td>40</td>
+      <td>40</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>5.8</td>
+      <td>2.3</td>
+      <td>10.03</td>
+      <td>8.377778</td>
+      <td>0.985714</td>
+      <td>11.293492</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>11.293492</td>
+      <td>دکترشریعتی</td>
+    </tr>
+    <tr>
+      <th>1280</th>
+      <td>19</td>
+      <td>40132048</td>
+      <td>37.0</td>
+      <td>39.0</td>
+      <td>38.0</td>
+      <td>38.0</td>
+      <td>35.0</td>
+      <td>40</td>
+      <td>40</td>
+      <td>40.0</td>
+      <td>...</td>
+      <td>8.5</td>
+      <td>0.0</td>
+      <td>11.57</td>
+      <td>12.277778</td>
+      <td>0.000000</td>
+      <td>15.347778</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>15.347778</td>
+      <td>دکترشریعتی</td>
+    </tr>
+  </tbody>
+</table>
+<p>1281 rows × 28 columns</p>
+</div>
+<p><a name="clean"></a></p>
+<h3 id="22-data-cleaning">2.2 Data Cleaning</h3>
+<p>Data cleaning is a critical phase aimed at enhancing the quality and reliability of the dataset. This process involves identifying and rectifying errors, inconsistencies, and missing values present in the raw data. By employing techniques such as outlier detection, handling missing data, and resolving discrepancies, data cleaning ensures that the dataset is accurate, complete, and consistent. Moreover, it plays a crucial role in preparing the data for analysis, preventing misleading or biased results. Through meticulous data cleaning, my project aims to lay a solid foundation for insightful data analysis and ultimately make well-informed decisions based on trustworthy and dependable data.</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># Get a list of all column names in the DataFrame</span>
+columns = merged_df.columns.tolist()
+
+<span class="hljs-comment"># Define a list of column names that you want to drop</span>
+extra_columns = columns[<span class="hljs-number">0</span>:<span class="hljs-number">1</span>] + columns[<span class="hljs-number">10</span>:<span class="hljs-number">19</span>] + columns[<span class="hljs-number">21</span>:<span class="hljs-number">-1</span>]
+
+<span class="hljs-comment"># Drop the columns specified in the `extra_columns` list from the DataFrame</span>
+merged_df.drop(extra_columns, axis=<span class="hljs-number">1</span>, inplace=<span class="hljs-literal">True</span>)
+</div></code></pre>
+<pre class="hljs"><code><div>merged_df
+</div></code></pre>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>شماره دانشجو</th>
+      <th>تکلیف1</th>
+      <th>تکلیف2</th>
+      <th>تکلیف3</th>
+      <th>تکلیف4</th>
+      <th>تکلیف5</th>
+      <th>تکلیف6</th>
+      <th>تکلیف7</th>
+      <th>تکلیف8</th>
+      <th>میانترم از7</th>
+      <th>نهایی 1</th>
+      <th>استاد</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>40027008</td>
+      <td>40.0</td>
+      <td>33.0</td>
+      <td>0.0</td>
+      <td>35.0</td>
+      <td>40.0</td>
+      <td>40</td>
+      <td>35</td>
+      <td>0.0</td>
+      <td>2.2</td>
+      <td>4.93</td>
+      <td>دکتر کیانی</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>40113901</td>
+      <td>37.0</td>
+      <td>33.0</td>
+      <td>38.0</td>
+      <td>0.0</td>
+      <td>40.0</td>
+      <td>40</td>
+      <td>40</td>
+      <td>40.0</td>
+      <td>3.1</td>
+      <td>8.78</td>
+      <td>دکتر کیانی</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>40122045</td>
+      <td>24.0</td>
+      <td>32.0</td>
+      <td>40.0</td>
+      <td>20.0</td>
+      <td>15.0</td>
+      <td>40</td>
+      <td>35</td>
+      <td>18.0</td>
+      <td>4.3</td>
+      <td>7.54</td>
+      <td>دکتر کیانی</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>40122046</td>
+      <td>0.0</td>
+      <td>36.0</td>
+      <td>40.0</td>
+      <td>40.0</td>
+      <td>40.0</td>
+      <td>40</td>
+      <td>35</td>
+      <td>40.0</td>
+      <td>0.1</td>
+      <td>4.71</td>
+      <td>دکتر کیانی</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>40122047</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>40</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>1.1</td>
+      <td>1.50</td>
+      <td>دکتر کیانی</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1276</th>
+      <td>40132012</td>
+      <td>0.0</td>
+      <td>40.0</td>
+      <td>40.0</td>
+      <td>36.0</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>35</td>
+      <td>22.0</td>
+      <td>3.9</td>
+      <td>9.48</td>
+      <td>دکترشریعتی</td>
+    </tr>
+    <tr>
+      <th>1277</th>
+      <td>40132013</td>
+      <td>25.0</td>
+      <td>20.0</td>
+      <td>20.0</td>
+      <td>37.0</td>
+      <td>40.0</td>
+      <td>40</td>
+      <td>40</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>8.52</td>
+      <td>دکترشریعتی</td>
+    </tr>
+    <tr>
+      <th>1278</th>
+      <td>40132021</td>
+      <td>40.0</td>
+      <td>34.0</td>
+      <td>40.0</td>
+      <td>40.0</td>
+      <td>40.0</td>
+      <td>40</td>
+      <td>40</td>
+      <td>40.0</td>
+      <td>5.6</td>
+      <td>17.34</td>
+      <td>دکترشریعتی</td>
+    </tr>
+    <tr>
+      <th>1279</th>
+      <td>40132033</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>40.0</td>
+      <td>38.0</td>
+      <td>35.0</td>
+      <td>40</td>
+      <td>40</td>
+      <td>0.0</td>
+      <td>2.3</td>
+      <td>10.03</td>
+      <td>دکترشریعتی</td>
+    </tr>
+    <tr>
+      <th>1280</th>
+      <td>40132048</td>
+      <td>37.0</td>
+      <td>39.0</td>
+      <td>38.0</td>
+      <td>38.0</td>
+      <td>35.0</td>
+      <td>40</td>
+      <td>40</td>
+      <td>40.0</td>
+      <td>0.0</td>
+      <td>11.57</td>
+      <td>دکترشریعتی</td>
+    </tr>
+  </tbody>
+</table>
+<p>1281 rows × 12 columns</p>
+</div>
+<pre class="hljs"><code><div><span class="hljs-comment">#Rename headers</span>
+merged_df.columns = [<span class="hljs-string">"ID"</span>] + [<span class="hljs-string">f"HW<span class="hljs-subst">{x}</span>"</span> <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>,<span class="hljs-number">9</span>)] + [<span class="hljs-string">"mid"</span>, <span class="hljs-string">"final"</span>, <span class="hljs-string">"prof"</span>]
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment"># Fix duplicate prof name error</span>
+merged_df.replace(<span class="hljs-string">"دکترخسروی"</span>, <span class="hljs-string">"دکتر خسروی"</span>, inplace=<span class="hljs-literal">True</span>)
+merged_df.replace(<span class="hljs-string">"شجاعی"</span>, <span class="hljs-string">"دکترشجاعی"</span>, inplace=<span class="hljs-literal">True</span>)
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment"># Define a dictionary of prof names in Farsi and English</span>
+prof_names = {
+    <span class="hljs-string">"دکتر ایمانفر"</span>: <span class="hljs-string">"Dr. Imanfar"</span>,
+    <span class="hljs-string">"دکتر خسروی"</span>: <span class="hljs-string">"Dr. Khosravi"</span>,
+    <span class="hljs-string">"دکتر رحمتی"</span>: <span class="hljs-string">"Dr. Rahmati"</span>,
+    <span class="hljs-string">"دکتر رستمی"</span>: <span class="hljs-string">"Dr. Rostami"</span>,
+    <span class="hljs-string">"دکتر نجفی"</span>: <span class="hljs-string">"Dr. Najafi"</span>,
+    <span class="hljs-string">"دکتر کیانی"</span>: <span class="hljs-string">"Dr. Kiani"</span>,
+    <span class="hljs-string">"دکتراخلاقی"</span>: <span class="hljs-string">"Dr. Akhlaghi"</span>,
+    <span class="hljs-string">"دکتربروجردیان"</span>: <span class="hljs-string">"Dr. Boroujerdiyan"</span>,
+    <span class="hljs-string">"دکتربیاتی"</span>: <span class="hljs-string">"Dr. Bayati"</span>,
+    <span class="hljs-string">"دکترتوانا"</span>: <span class="hljs-string">"Dr. Tavana"</span>,
+    <span class="hljs-string">"دکتررضی"</span>: <span class="hljs-string">"Dr. Razi"</span>,
+    <span class="hljs-string">"دکترسعیدی مدنی"</span>: <span class="hljs-string">"Dr. Saeidi Madani"</span>,
+    <span class="hljs-string">"دکترشجاعی"</span>: <span class="hljs-string">"Dr. Shojai"</span>,
+    <span class="hljs-string">"دکترشریعتی"</span>: <span class="hljs-string">"Dr. Shariaty"</span>
+}
+
+<span class="hljs-comment"># Rename instructors names to English</span>
+merged_df[<span class="hljs-string">"prof"</span>] = merged_df[<span class="hljs-string">"prof"</span>].replace(prof_names)
+</div></code></pre>
+<h4 id="label-encoding">Label encoding</h4>
+<p>Label Encoding in scikit-learn is a method used to convert categorical data into numerical format. It assigns a unique integer to each category, making it compatible with machine learning algorithms that require numeric inputs. However, be cautious with ordinal assumptions, and consider One-Hot Encoding for certain scenarios.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> sklearn.preprocessing <span class="hljs-keyword">import</span> LabelEncoder
+
+<span class="hljs-comment"># Create a LabelEncoder object</span>
+label_encoder = LabelEncoder()
+
+<span class="hljs-comment"># Use the LabelEncoder to encode the 'prof' column in the DataFrame</span>
+merged_df[<span class="hljs-string">'prof'</span>] = label_encoder.fit_transform(merged_df[<span class="hljs-string">'prof'</span>])
+
+<span class="hljs-comment"># Create a dictionary to map the original categorical labels to their corresponding encoded numbers</span>
+encoded_dict = {label: index <span class="hljs-keyword">for</span> index, label <span class="hljs-keyword">in</span> enumerate(label_encoder.classes_)}
+
+<span class="hljs-comment"># Convert the dictionary to a DataFrame for easier inspection and further use</span>
+encoded_dict = pd.DataFrame(encoded_dict.items(), columns=[<span class="hljs-string">'profname'</span>, <span class="hljs-string">'Encoded number'</span>])
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment"># A transposed shape of profnames DataFrame</span>
+encoded_dict.T
+</div></code></pre>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+      <th>11</th>
+      <th>12</th>
+      <th>13</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>profname</th>
+      <td>Dr. Akhlaghi</td>
+      <td>Dr. Bayati</td>
+      <td>Dr. Boroujerdiyan</td>
+      <td>Dr. Imanfar</td>
+      <td>Dr. Khosravi</td>
+      <td>Dr. Kiani</td>
+      <td>Dr. Najafi</td>
+      <td>Dr. Rahmati</td>
+      <td>Dr. Razi</td>
+      <td>Dr. Rostami</td>
+      <td>Dr. Saeidi Madani</td>
+      <td>Dr. Shariaty</td>
+      <td>Dr. Shojai</td>
+      <td>Dr. Tavana</td>
+    </tr>
+    <tr>
+      <th>Encoded number</th>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>Drop rows with any non-numeric values and reset the indexes.</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># Convert all columns of the DataFrame to numeric type</span>
+<span class="hljs-comment"># If any non-numeric values are encountered, they will be converted to NaN (Not a Number)</span>
+merged_df = merged_df.apply(pd.to_numeric, errors=<span class="hljs-string">'coerce'</span>)
+
+<span class="hljs-comment"># Drop rows containing NaN values (rows with non-numeric data)</span>
+merged_df = merged_df.dropna()
+
+<span class="hljs-comment"># Reset the index of the DataFrame after dropping rows with NaN values</span>
+merged_df.reset_index(drop=<span class="hljs-literal">True</span>, inplace=<span class="hljs-literal">True</span>)
+
+</div></code></pre>
+<pre class="hljs"><code><div>cleaned_df = merged_df
+cleaned_df
+</div></code></pre>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>HW1</th>
+      <th>HW2</th>
+      <th>HW3</th>
+      <th>HW4</th>
+      <th>HW5</th>
+      <th>HW6</th>
+      <th>HW7</th>
+      <th>HW8</th>
+      <th>mid</th>
+      <th>final</th>
+      <th>prof</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>40027008</td>
+      <td>40.0</td>
+      <td>33.0</td>
+      <td>0.0</td>
+      <td>35.0</td>
+      <td>40.0</td>
+      <td>40</td>
+      <td>35.0</td>
+      <td>0.0</td>
+      <td>2.2</td>
+      <td>4.93</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>40113901</td>
+      <td>37.0</td>
+      <td>33.0</td>
+      <td>38.0</td>
+      <td>0.0</td>
+      <td>40.0</td>
+      <td>40</td>
+      <td>40.0</td>
+      <td>40.0</td>
+      <td>3.1</td>
+      <td>8.78</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>40122045</td>
+      <td>24.0</td>
+      <td>32.0</td>
+      <td>40.0</td>
+      <td>20.0</td>
+      <td>15.0</td>
+      <td>40</td>
+      <td>35.0</td>
+      <td>18.0</td>
+      <td>4.3</td>
+      <td>7.54</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>40122046</td>
+      <td>0.0</td>
+      <td>36.0</td>
+      <td>40.0</td>
+      <td>40.0</td>
+      <td>40.0</td>
+      <td>40</td>
+      <td>35.0</td>
+      <td>40.0</td>
+      <td>0.1</td>
+      <td>4.71</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>40122047</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>40</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.1</td>
+      <td>1.50</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1267</th>
+      <td>40132012</td>
+      <td>0.0</td>
+      <td>40.0</td>
+      <td>40.0</td>
+      <td>36.0</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>35.0</td>
+      <td>22.0</td>
+      <td>3.9</td>
+      <td>9.48</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>1268</th>
+      <td>40132013</td>
+      <td>25.0</td>
+      <td>20.0</td>
+      <td>20.0</td>
+      <td>37.0</td>
+      <td>40.0</td>
+      <td>40</td>
+      <td>40.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>8.52</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>1269</th>
+      <td>40132021</td>
+      <td>40.0</td>
+      <td>34.0</td>
+      <td>40.0</td>
+      <td>40.0</td>
+      <td>40.0</td>
+      <td>40</td>
+      <td>40.0</td>
+      <td>40.0</td>
+      <td>5.6</td>
+      <td>17.34</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>1270</th>
+      <td>40132033</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>40.0</td>
+      <td>38.0</td>
+      <td>35.0</td>
+      <td>40</td>
+      <td>40.0</td>
+      <td>0.0</td>
+      <td>2.3</td>
+      <td>10.03</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>1271</th>
+      <td>40132048</td>
+      <td>37.0</td>
+      <td>39.0</td>
+      <td>38.0</td>
+      <td>38.0</td>
+      <td>35.0</td>
+      <td>40</td>
+      <td>40.0</td>
+      <td>40.0</td>
+      <td>0.0</td>
+      <td>11.57</td>
+      <td>11</td>
+    </tr>
+  </tbody>
+</table>
+<p>1272 rows × 12 columns</p>
+</div>
+<p><a name="csvout"></a></p>
+<h3 id="22-data-output-to-csv">2.2 Data Output to CSV</h3>
+<pre class="hljs"><code><div><span class="hljs-comment"># Save the cleaned DataFrame to a CSV file</span>
+cleaned_df.to_csv(<span class="hljs-string">'data_sets/grades.csv'</span>, index=<span class="hljs-literal">False</span>)
+
+<span class="hljs-comment"># Save the DataFrame containing the encoded mapping to a CSV file</span>
+encoded_dict.to_csv(<span class="hljs-string">'data_sets/prof_dict.csv'</span>, index=<span class="hljs-literal">False</span>)
+</div></code></pre>
+<p><a name="visual"></a></p>
+<h2 id="3--data-visualisation">3- Data Visualisation</h2>
+<p>Data visualization is a crucial aspect of data analysis, where complex and voluminous datasets are visually represented using charts, graphs, and other graphical elements. Through visualizations, data analysts can effectively communicate insights, patterns, and trends that might be challenging to discern from raw numbers alone. By presenting data in a visually appealing and intuitive manner, data visualization enables decision-makers to grasp key information quickly, make informed choices, and identify potential opportunities or challenges. It also aids in detecting outliers, understanding data distributions, and validating assumptions. From simple bar charts to intricate interactive dashboards, data visualization empowers analysts to extract meaningful knowledge from data, making it an indispensable tool in the data analysis process.</p>
+<p><a name="Overview"></a></p>
+<h3 id="31-data-overview">3.1 Data Overview</h3>
+<p>An overview of the distribution of grades for students in General Mathematics 1 in comparison between midterm and final exam grades.</p>
+<p>The .describe() method is then applied to the selected DataFrame, which generates summary statistics for the columns 'mid' and 'final'. These statistics include count, mean, standard deviation, minimum value, 25th percentile, median, 75th percentile, and maximum value for each column.</p>
+<pre class="hljs"><code><div>df = cleaned_df
+
+df[[<span class="hljs-string">"mid"</span>,<span class="hljs-string">"final"</span>]].describe()
+</div></code></pre>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mid</th>
+      <th>final</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>1272.000000</td>
+      <td>1272.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>3.557390</td>
+      <td>9.860483</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>2.188107</td>
+      <td>4.952926</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>1.850000</td>
+      <td>6.107500</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>3.700000</td>
+      <td>10.010000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>5.400000</td>
+      <td>13.802500</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>7.000000</td>
+      <td>19.140000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h4 id="matplotlib">Matplotlib</h4>
+<p>Matplotlib is a Python library for creating high-quality visualizations. It offers a wide range of plot types and customization options, making it ideal for data exploration and presentation. Its straightforward syntax and compatibility with other Python libraries make it a popular choice for data visualization tasks.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+</div></code></pre>
+<pre class="hljs"><code><div>max_final = df[<span class="hljs-string">'final'</span>].max()
+cmap = plt.colormaps.get_cmap(<span class="hljs-string">'RdYlGn'</span>)
+normalized_final = df[<span class="hljs-string">'final'</span>] / max_final
+plt.figure(figsize=(<span class="hljs-number">10</span>, <span class="hljs-number">8</span>))
+plt.scatter(df[<span class="hljs-string">'mid'</span>], df[<span class="hljs-string">'final'</span>], c=normalized_final, cmap=cmap, marker=<span class="hljs-string">'o'</span>, s=<span class="hljs-number">50</span>)
+plt.xlabel(<span class="hljs-string">'mid'</span>)
+plt.ylabel(<span class="hljs-string">'Final grades'</span>)
+plt.title(<span class="hljs-string">'Mid-Final grades Graph'</span>)
+plt.colorbar(label=<span class="hljs-string">'Normalized Final Grade'</span>)
+
+plt.show()
+</div></code></pre>
+<p><img src="project_notebook_files/plots/project_notebook_37_0.png" alt="png"></p>
+<p>The resulting scatter plot visualizes the relationship between 'mid' and 'final' grades while providing color-coded insights into the normalized final grades of the students.</p>
+<p><a name="gradbyp"></a></p>
+<h3 id="32-grades-by-professors">3.2 Grades by Professors</h3>
+<p>An overview of the distribution of grades for students in General Mathematics 1 will be presented, focusing on the comparison between the midterm and final exam grades. By analyzing and visualizing the grade distributions, we aim to gain insights into the students' performance and understand potential patterns or trends that may have influenced their academic progress throughout the course.</p>
+<h4 id="mean-grades-by-professors">Mean Grades by Professors</h4>
+<pre class="hljs"><code><div><span class="hljs-comment">#Calculate the average final grade for each professor in the DataFrame `df`.</span>
+df[<span class="hljs-string">"prof"</span>] = label_encoder.inverse_transform(df[<span class="hljs-string">"prof"</span>])
+average_final_grade = df.groupby(<span class="hljs-string">'prof'</span>)[<span class="hljs-string">'final'</span>].mean()
+
+print(average_final_grade)
+</div></code></pre>
+<pre><code>prof
+Dr. Akhlaghi          9.154219
+Dr. Bayati            8.990282
+Dr. Boroujerdiyan     8.043429
+Dr. Imanfar          10.676857
+Dr. Khosravi          9.294724
+Dr. Kiani             9.924054
+Dr. Najafi           12.252857
+Dr. Rahmati           9.070423
+Dr. Razi             10.750563
+Dr. Rostami           8.762000
+Dr. Saeidi Madani     9.897465
+Dr. Shariaty         11.624077
+Dr. Shojai            9.744924
+Dr. Tavana            8.502246
+Name: final, dtype: float64
+</code></pre>
+<pre class="hljs"><code><div>average_final_grade = df.groupby(<span class="hljs-string">'prof'</span>)[<span class="hljs-string">'final'</span>].mean()
+average_final_grade_dict = average_final_grade.to_dict()
+grades = average_final_grade.tolist()
+
+normalized_grades = [(g - min(grades)) / (max(grades) - min(grades)) <span class="hljs-keyword">for</span> g <span class="hljs-keyword">in</span> grades]
+
+cmap = plt.get_cmap(<span class="hljs-string">'RdYlGn'</span>)
+
+plt.figure(figsize=(<span class="hljs-number">10</span>, <span class="hljs-number">6</span>))
+
+<span class="hljs-keyword">for</span> professor, norm_grade <span class="hljs-keyword">in</span> zip(average_final_grade.keys(), normalized_grades):
+    color = cmap(norm_grade)
+    plt.bar(professor, average_final_grade[professor], color=color)
+
+plt.xlabel(<span class="hljs-string">'Professor'</span>)
+plt.ylabel(<span class="hljs-string">'Average Final Grade'</span>)
+plt.title(<span class="hljs-string">'Average Final Grade by Professor'</span>)
+plt.xticks(rotation=<span class="hljs-number">90</span>)
+
+sm = plt.cm.ScalarMappable(cmap=cmap, norm=plt.Normalize(vmin=<span class="hljs-number">0</span>, vmax=<span class="hljs-number">1</span>))
+sm.set_array([])
+
+plt.show()
+</div></code></pre>
+<p><img src="project_notebook_files/plots/project_notebook_42_0.png" alt="png"></p>
+<p>The resulting bar plot visualizes the average final grade for each professor, with colors indicating the relative strength of the normalized grades.</p>
+<h4 id="3d-vectorization">3D vectorization</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> matplotlib.colors <span class="hljs-keyword">import</span> ListedColormap
+</div></code></pre>
+<pre class="hljs"><code><div>df_prof_named = df
+
+df_prof_named[<span class="hljs-string">'prof'</span>] = pd.Categorical(df_prof_named[<span class="hljs-string">'prof'</span>])
+num_professors = len(df_prof_named[<span class="hljs-string">'prof'</span>].cat.categories)
+cmap = ListedColormap(plt.cm.tab20.colors[:num_professors])
+fig = plt.figure(figsize=(<span class="hljs-number">10</span>, <span class="hljs-number">8</span>))
+ax = fig.add_subplot(<span class="hljs-number">111</span>, projection=<span class="hljs-string">'3d'</span>)
+x, y , z = df_prof_named[<span class="hljs-string">'mid'</span>], df_prof_named[<span class="hljs-string">'prof'</span>].cat.codes, df_prof_named[<span class="hljs-string">'final'</span>]
+sc = ax.scatter(x, y, z, c=df_prof_named[<span class="hljs-string">'prof'</span>].cat.codes, cmap=cmap, marker=<span class="hljs-string">'o'</span>, s=<span class="hljs-number">50</span>)
+ax.set_xlabel(<span class="hljs-string">'mid'</span>)
+ax.set_ylabel(<span class="hljs-string">'prof'</span>)
+ax.set_zlabel(<span class="hljs-string">'final'</span>)
+ax.set_title(<span class="hljs-string">'Grades based on profs'</span>)
+cbar = plt.colorbar(sc, ticks=range(num_professors))
+cbar.set_label(<span class="hljs-string">'Professors'</span>)
+cbar.set_ticklabels(df_prof_named[<span class="hljs-string">'prof'</span>].cat.categories)
+
+plt.show()
+</div></code></pre>
+<p><img src="project_notebook_files/plots/project_notebook_46_0.png" alt="png"></p>
+<p>The resulting 3D scatter plot visualizes the relationship between 'mid', 'final', and professors. Each professor is represented by a unique color, and their corresponding names are shown on the colorbar for easy identification.</p>
+<p><a name="stu"></a></p>
+<h2 id="4--correlation-of-clusters-with-grades">4- Correlation of Clusters with Grades</h2>
+<p>This study explores the correlation between students' majors and their General Mathematics 1 grades through data plots and statistical analysis. Using tangible visualizations and statistical measures, we aim to identify any potential patterns or trends that link academic disciplines with performance in the course. The results will inform targeted support strategies and curriculum adjustments to enhance students' success in General Mathematics 1.</p>
+<p><a name="major"></a></p>
+<h3 id="41-correlation-between-majors-and-grades">4.1 Correlation between majors and grades</h3>
+<p>By student ID, we have categorized grades into majors to find out if there is any correlation between students' majors and their math grades.</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># Define a dictionary to map numeric major IDs to their corresponding major names</span>
+majors = {
+    <span class="hljs-number">23</span>: <span class="hljs-string">"Electrical Engineering"</span>,    <span class="hljs-number">26</span>: <span class="hljs-string">"Mechanical Engineering"</span>,
+    <span class="hljs-number">22</span>: <span class="hljs-string">"Chemical Engineering"</span>,    <span class="hljs-number">33</span>: <span class="hljs-string">"Biomedical Engineering"</span>,
+    <span class="hljs-number">34</span>: <span class="hljs-string">"Petroleum Engineering"</span>,    <span class="hljs-number">27</span>: <span class="hljs-string">"Mining Engineering"</span>,
+    <span class="hljs-number">39</span>: <span class="hljs-string">"Materials Engineering"</span>,    <span class="hljs-number">24</span>: <span class="hljs-string">"Civil Engineering"</span>,
+    <span class="hljs-number">29</span>: <span class="hljs-string">"Aerospace Engineering"</span>,    <span class="hljs-number">11</span>: <span class="hljs-string">"Physics and Energy"</span>,
+    <span class="hljs-number">25</span>: <span class="hljs-string">"Industrial Engineering"</span>,    <span class="hljs-number">31</span>: <span class="hljs-string">"Computer Engineering"</span>,
+    <span class="hljs-number">13</span>: <span class="hljs-string">"Computer Science"</span>,    <span class="hljs-number">12</span>: <span class="hljs-string">"Applied Mathematics"</span>,
+    <span class="hljs-number">30</span>: <span class="hljs-string">"Marine Engineering"</span>,    <span class="hljs-number">32</span>: <span class="hljs-string">"Polymer Engineering"</span>,
+    <span class="hljs-number">28</span>: <span class="hljs-string">"Textile Engineering"</span>
+}
+
+<span class="hljs-comment"># Extract the two-digit IDs from the 'ID' column and map them to their corresponding major names using the 'majors' dictionary</span>
+major_df = df[[<span class="hljs-string">"ID"</span>,<span class="hljs-string">"mid"</span>,<span class="hljs-string">"final"</span>]]
+pd.options.mode.chained_assignment = <span class="hljs-literal">None</span>
+major_df[<span class="hljs-string">'ID'</span>] = major_df[<span class="hljs-string">'ID'</span>].astype(str).apply(<span class="hljs-keyword">lambda</span> x: x[<span class="hljs-number">3</span>:<span class="hljs-number">5</span>])
+majors = {str(k): v <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> majors.items()}
+major_df[<span class="hljs-string">'ID'</span>] = major_df[<span class="hljs-string">'ID'</span>].astype(str).replace(majors)
+
+<span class="hljs-comment"># Calculate the average final grade for each major</span>
+major_ranked = major_df.groupby(<span class="hljs-string">'ID'</span>)[<span class="hljs-string">'final'</span>].mean().reset_index().sort_values(by=<span class="hljs-string">'final'</span>, ascending=<span class="hljs-literal">False</span>).reset_index(drop=<span class="hljs-literal">True</span>)
+</div></code></pre>
+<p><a name="mean"></a></p>
+<h3 id="42-mean-math-grades-for-majors">4.2 Mean math grades for majors</h3>
+<h4 id="numpy">Numpy</h4>
+<p>NumPy is a powerful Python library for numerical computing and data manipulation. It provides efficient multi-dimensional arrays and a vast collection of mathematical functions, making it a foundation for various scientific computing tasks, including data science and machine learning.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+</div></code></pre>
+<pre class="hljs"><code><div>plt.figure(figsize=(<span class="hljs-number">12</span>, <span class="hljs-number">6</span>))
+<span class="hljs-comment">#  NumPy is used to create evenly spaced color values for the bars in the bar plot.</span>
+colors = plt.cm.coolwarm(np.linspace(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, len(major_ranked)))
+bars = plt.bar(major_ranked[<span class="hljs-string">'ID'</span>], major_ranked[<span class="hljs-string">'final'</span>], color=colors)
+plt.xticks(rotation=<span class="hljs-number">90</span>, fontsize=<span class="hljs-number">10</span>)
+plt.xlabel(<span class="hljs-string">'Majors'</span>)
+plt.ylabel(<span class="hljs-string">'Final Ranking Score'</span>)
+plt.title(<span class="hljs-string">'Majors Ranking'</span>)
+<span class="hljs-keyword">for</span> bar, value <span class="hljs-keyword">in</span> zip(bars, major_ranked[<span class="hljs-string">'final'</span>]):
+    plt.annotate(<span class="hljs-string">f'<span class="hljs-subst">{value:<span class="hljs-number">.2</span>f}</span>'</span>, xy=(bar.get_x() + bar.get_width() / <span class="hljs-number">2</span>, bar.get_height()), xytext=(<span class="hljs-number">0</span>, <span class="hljs-number">3</span>),
+                 textcoords=<span class="hljs-string">"offset points"</span>, ha=<span class="hljs-string">'center'</span>, va=<span class="hljs-string">'bottom'</span>, fontsize=<span class="hljs-number">8</span>)
+sm = plt.cm.ScalarMappable(cmap=<span class="hljs-string">'coolwarm'</span>, norm=plt.Normalize(vmin=major_ranked[<span class="hljs-string">'final'</span>].min(), vmax=major_ranked[<span class="hljs-string">'final'</span>].max()))
+sm.set_array([])
+plt.tight_layout()
+plt.show()
+</div></code></pre>
+<p><img src="project_notebook_files/plots/project_notebook_54_0.png" alt="png"></p>
+<p>The resulting bar plot visualizes the ranking of majors based on their average final grades. Each major is represented by a colored bar, and the corresponding average final grade is annotated on top of each bar.</p>
+<p><a name="mmf"></a></p>
+<h3 id="43-majors-on-mid-final-plot">4.3 Majors on Mid-Final Plot</h3>
+<p>The DataFrame presents the mean grades of students in the midterm and final exams for various majors. By exploring this dataset, one can gain valuable insights into the grade distributions across different academic disciplines and identify any trends or patterns in students' performance. Analyzing the mean grades allows for a more comprehensive understanding of how students from different majors performed on average in both exams.</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># Warnings can help ignore the futher information which ipython can show</span>
+<span class="hljs-keyword">import</span> warnings
+warnings.filterwarnings(<span class="hljs-string">'ignore'</span>)
+
+cmap = plt.cm.get_cmap(<span class="hljs-string">'viridis'</span>, len(major_df[<span class="hljs-string">'ID'</span>].unique()))
+plt.figure(figsize=(<span class="hljs-number">10</span>, <span class="hljs-number">6</span>))
+<span class="hljs-keyword">for</span> i, (ID, group) <span class="hljs-keyword">in</span> enumerate(major_df.groupby(<span class="hljs-string">'ID'</span>)):
+    plt.scatter(group[<span class="hljs-string">'mid'</span>], group[<span class="hljs-string">'final'</span>], color=cmap(i), label=ID)
+
+plt.xlabel(<span class="hljs-string">'mid'</span>)
+plt.ylabel(<span class="hljs-string">'final'</span>)
+plt.title(<span class="hljs-string">'Scatter Plot of mid vs final'</span>)
+plt.legend(loc=<span class="hljs-string">'upper left'</span>, bbox_to_anchor=(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>))
+plt.grid(<span class="hljs-literal">True</span>)
+plt.show()
+</div></code></pre>
+<p><img src="project_notebook_files/plots/project_notebook_58_0.png" alt="png"></p>
+<p>The resulting scatter plot visualizes the relationship between 'mid' and 'final' grades for each major, with each major's data points represented by a different color from the 'viridis' colormap. The legend allows you to identify each major based on its unique color. The grid lines further aid in interpreting the data.</p>
+<p><a name="int"></a></p>
+<h3 id="4-native-and-international-students">4. Native and International Students</h3>
+<p>There can be a correlation between the grades of international and native students. Analyzing this relationship offers insights into their academic performance and helps tailor support programs and teaching methods for improved learning outcomes.</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># We create int_df DataFrame then replace 0,1,7,9 for Native and 4 for International students</span>
+int_df = df[[<span class="hljs-string">"ID"</span>,<span class="hljs-string">"mid"</span>,<span class="hljs-string">"final"</span>]]
+int_df[<span class="hljs-string">'ID'</span>] = int_df[<span class="hljs-string">'ID'</span>].astype(str).apply(<span class="hljs-keyword">lambda</span> x: x[<span class="hljs-number">5</span>:<span class="hljs-number">6</span>])
+int_df[<span class="hljs-string">'ID'</span>] = pd.to_numeric(int_df[<span class="hljs-string">'ID'</span>], errors=<span class="hljs-string">'coerce'</span>).fillna(<span class="hljs-number">0</span>).astype(int)
+int_df[<span class="hljs-string">'ID'</span>].replace([<span class="hljs-number">1</span>, <span class="hljs-number">9</span>, <span class="hljs-number">7</span>], <span class="hljs-number">0</span>, inplace=<span class="hljs-literal">True</span>)
+int_df[<span class="hljs-string">'ID'</span>] = int_df[<span class="hljs-string">'ID'</span>].replace({<span class="hljs-number">0</span>: <span class="hljs-string">'Native'</span>, <span class="hljs-number">4</span>: <span class="hljs-string">'International'</span>})
+</div></code></pre>
+<p>Total amount of Native and International students</p>
+<pre class="hljs"><code><div>int_df[<span class="hljs-string">'ID'</span>].value_counts()
+</div></code></pre>
+<pre><code>Native           951
+International    321
+Name: ID, dtype: int64
+</code></pre>
+<h4 id="midterm-grade-vs-final-grade-by-student-type">Midterm Grade vs. Final Grade by Student Type</h4>
+<pre class="hljs"><code><div>native_students = int_df[int_df[<span class="hljs-string">'ID'</span>] == <span class="hljs-string">'Native'</span>]
+international_students = int_df[int_df[<span class="hljs-string">'ID'</span>] == <span class="hljs-string">'International'</span>]
+
+plt.figure(figsize=(<span class="hljs-number">8</span>, <span class="hljs-number">6</span>))
+plt.scatter(native_students[<span class="hljs-string">'mid'</span>], native_students[<span class="hljs-string">'final'</span>], color=<span class="hljs-string">'blue'</span>, label=<span class="hljs-string">'Native'</span>)
+plt.scatter(international_students[<span class="hljs-string">'mid'</span>], international_students[<span class="hljs-string">'final'</span>], color=<span class="hljs-string">'red'</span>, label=<span class="hljs-string">'International'</span>)
+plt.xlabel(<span class="hljs-string">'Midterm Grade'</span>)
+plt.ylabel(<span class="hljs-string">'Final Grade'</span>)
+plt.title(<span class="hljs-string">'Midterm Grade vs. Final Grade by Student Type'</span>)
+plt.legend()
+
+plt.show()
+</div></code></pre>
+<p><img src="project_notebook_files/plots/project_notebook_65_0.png" alt="png"></p>
+<h4 id="mean-final-grade-for-native-and-international-ids">Mean final grade for Native and International IDs</h4>
+<pre class="hljs"><code><div>mean_final_grade = int_df.groupby(<span class="hljs-string">'ID'</span>)[<span class="hljs-string">'final'</span>].mean()
+
+<span class="hljs-comment"># Plot the bar chart</span>
+plt.figure(figsize=(<span class="hljs-number">6</span>, <span class="hljs-number">4</span>))
+ax = mean_final_grade.plot(kind=<span class="hljs-string">'bar'</span>, color=[<span class="hljs-string">'blue'</span>, <span class="hljs-string">'red'</span>])
+plt.xlabel(<span class="hljs-string">'Student Type'</span>)
+plt.ylabel(<span class="hljs-string">'Mean Final Grade'</span>)
+plt.title(<span class="hljs-string">'Mean Final Grade for Native and International IDs'</span>)
+<span class="hljs-keyword">for</span> index, value <span class="hljs-keyword">in</span> enumerate(mean_final_grade):
+    ax.text(index, value, <span class="hljs-string">f'<span class="hljs-subst">{value:<span class="hljs-number">.2</span>f}</span>'</span>, ha=<span class="hljs-string">'center'</span>, va=<span class="hljs-string">'bottom'</span>, fontsize=<span class="hljs-number">10</span>)
+
+plt.show()
+</div></code></pre>
+<p><img src="project_notebook_files/plots/project_notebook_67_0.png" alt="png"></p>
+<p>So, it can be concluded that international students may have slightly lower grades in math compared to native students.</p>
+<p><a name="ml"></a></p>
+<h2 id="5--machine-learning-model">5- Machine Learning Model</h2>
+<p>Machine learning is a branch of artificial intelligence that allows computers to learn from data and make predictions without explicit programming. Simple Linear Regression (SLRM) and Multiple Linear Regression (MLRM) are two common techniques in machine learning. SLRM models the linear relationship between one input and one output variable, while MLRM considers multiple input variables. In educational contexts, SLRM and MLRM can be used to predict a student's final exam score based on their midterm grade, homework grades, or a combination of factors. These predictive models aid educators in identifying at-risk students and providing targeted support, ultimately enhancing academic outcomes through data-driven decisions.</p>
+<p><a name="mldp"></a></p>
+<h3 id="51-data-processing">5.1 Data Processing</h3>
+<p>Data processing in machine learning involves preparing and transforming raw data for model training. It includes data cleaning, feature engineering, encoding categorical variables, data splitting, and scaling. Proper data processing is crucial for improving model performance and ensuring accurate predictions.
+As we had processed our data before so we can recall the DataFrame by importing <code>grades.csv</code></p>
+<pre class="hljs"><code><div>df = pd.read_csv(<span class="hljs-string">"data_sets/grades.csv"</span>)
+df.head()
+</div></code></pre>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>HW1</th>
+      <th>HW2</th>
+      <th>HW3</th>
+      <th>HW4</th>
+      <th>HW5</th>
+      <th>HW6</th>
+      <th>HW7</th>
+      <th>HW8</th>
+      <th>mid</th>
+      <th>final</th>
+      <th>prof</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>40027008</td>
+      <td>40.0</td>
+      <td>33.0</td>
+      <td>0.0</td>
+      <td>35.0</td>
+      <td>40.0</td>
+      <td>40</td>
+      <td>35.0</td>
+      <td>0.0</td>
+      <td>2.2</td>
+      <td>4.93</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>40113901</td>
+      <td>37.0</td>
+      <td>33.0</td>
+      <td>38.0</td>
+      <td>0.0</td>
+      <td>40.0</td>
+      <td>40</td>
+      <td>40.0</td>
+      <td>40.0</td>
+      <td>3.1</td>
+      <td>8.78</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>40122045</td>
+      <td>24.0</td>
+      <td>32.0</td>
+      <td>40.0</td>
+      <td>20.0</td>
+      <td>15.0</td>
+      <td>40</td>
+      <td>35.0</td>
+      <td>18.0</td>
+      <td>4.3</td>
+      <td>7.54</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>40122046</td>
+      <td>0.0</td>
+      <td>36.0</td>
+      <td>40.0</td>
+      <td>40.0</td>
+      <td>40.0</td>
+      <td>40</td>
+      <td>35.0</td>
+      <td>40.0</td>
+      <td>0.1</td>
+      <td>4.71</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>40122047</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>40</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.1</td>
+      <td>1.50</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h4 id="split-data-into-train-and-test-set">Split data into train and test set</h4>
+<p>Train-test split is a technique used in machine learning to divide the dataset into training and testing subsets. The training set is used to train the model, while the testing set evaluates its performance on unseen data, ensuring accurate predictions and preventing overfitting.</p>
+<h4 id="scikit-learn">Scikit-learn</h4>
+<p>Scikit-learn is a popular Python library for machine learning, offering a wide range of algorithms and tools. It provides the train_test_split function to easily split data into training and testing sets. This helps evaluate model performance, prevent overfitting, and build reliable machine learning models.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> sklearn.model_selection <span class="hljs-keyword">import</span> train_test_split
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment"># For SLRM</span>
+slrm_X = df[[<span class="hljs-string">'mid'</span>]]
+slrm_y = df[<span class="hljs-string">'final'</span>]
+
+slrm_X_train, slrm_X_test, slrm_y_train, slrm_y_test = train_test_split(slrm_X, slrm_y, test_size=<span class="hljs-number">0.2</span>, random_state=<span class="hljs-number">42</span>)
+
+<span class="hljs-comment"># For MLRM</span>
+mlrm_X = df[[<span class="hljs-string">'HW1'</span>, <span class="hljs-string">'HW2'</span>, <span class="hljs-string">'HW3'</span>, <span class="hljs-string">'HW4'</span>, <span class="hljs-string">'HW5'</span>, <span class="hljs-string">'HW6'</span>, <span class="hljs-string">'HW7'</span>, <span class="hljs-string">'HW8'</span>, <span class="hljs-string">'mid'</span>, <span class="hljs-string">'prof'</span>]]
+mlrm_y = df[<span class="hljs-string">'final'</span>]
+
+mlrm_X_train, mlrm_X_test, mlrm_y_train, mlrm_y_test = train_test_split(mlrm_X, mlrm_y, test_size=<span class="hljs-number">0.2</span>, random_state=<span class="hljs-number">42</span>)
+</div></code></pre>
+<p><a name="slrm"></a></p>
+<h3 id="52-simple-linear-regression-model">5.2 Simple Linear Regression Model</h3>
+<p>Simple Linear Regression is a statistical technique to model the linear relationship between a dependent variable $(Y)$ and an independent variable $(X)$ as: $Y = β0 + β1 * X + ε$. It assumes linearity, independence, homoscedasticity, and normality of residuals.</p>
+<p>Scikit-learn, a popular Python library, offers an efficient implementation of Simple Linear Regression. It simplifies model training, prediction, and evaluation. By using scikit-learn, you can preprocess data, split it into training and testing sets, and assess the model's accuracy with metrics like Mean Squared Error or R-squared.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> sklearn.linear_model <span class="hljs-keyword">import</span> LinearRegression
+<span class="hljs-keyword">from</span> sklearn.metrics <span class="hljs-keyword">import</span> mean_absolute_error, mean_squared_error, r2_score
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment"># Create a linear regression object and Fit the model to the training data</span>
+model = LinearRegression()
+model.fit(slrm_X_train, slrm_y_train)
+
+<span class="hljs-comment"># Predict using the model on the testing set</span>
+slrm_y_test_pred = model.predict(slrm_X_test)
+</div></code></pre>
+<p>What we are looking for are the values of $w$ (Weight) and $b$ (Bias) to place in our simple linear regression model:<br></p>
+<p>$$ f_{w,b}(x) = wx + b \tag{1}$$</p>
+<p>Scikit-learn will present this values after calculatoin as coefficient for $w$ and intercept for $b$ by $(w,b) = $<code>(model.coef_ , model.intercept_)</code></p>
+<pre class="hljs"><code><div>print(<span class="hljs-string">f"f(x) = <span class="hljs-subst">{float(model.coef_):<span class="hljs-number">.3</span>f}</span>X + <span class="hljs-subst">{model.intercept_:<span class="hljs-number">.3</span>f}</span>"</span>)
+</div></code></pre>
+<pre><code>f(x) = 2.014X + 2.723
+</code></pre>
+<p>$$ f_{w,b}(x) = 2.014x + 2.723 \tag{1}$$</p>
+<h4 id="plot-the-data-and-the-regression-line-for-the-testing-set">Plot the data and the regression line for the testing set</h4>
+<pre class="hljs"><code><div>fig, (ax1, ax2) = plt.subplots(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, figsize=(<span class="hljs-number">12</span>, <span class="hljs-number">6</span>))
+ax1.scatter(slrm_X_test, slrm_y_test, label=<span class="hljs-string">"Testing Data"</span>)
+ax1.plot(slrm_X_test, slrm_y_test_pred, color=<span class="hljs-string">'green'</span>, label=<span class="hljs-string">"Regression Line"</span>)
+ax1.set_xlabel(<span class="hljs-string">'mid'</span>)
+ax1.set_ylabel(<span class="hljs-string">'final'</span>)
+ax1.legend()
+ax1.set_title(<span class="hljs-string">'Simple Linear Regression - Testing Data'</span>)
+ax2.scatter(slrm_X_train, slrm_y_train, label=<span class="hljs-string">"Training Data"</span>)
+ax2.plot(slrm_X_test, slrm_y_test_pred, color=<span class="hljs-string">'green'</span>, label=<span class="hljs-string">"Regression Line"</span>)
+ax2.set_xlabel(<span class="hljs-string">'mid'</span>)
+ax2.set_ylabel(<span class="hljs-string">'final'</span>)
+ax2.legend()
+ax2.set_title(<span class="hljs-string">'Simple Linear Regression - Training Data'</span>)
+plt.tight_layout()
+plt.show()
+</div></code></pre>
+<p><img src="project_notebook_files/plots/project_notebook_86_0.png" alt="png"></p>
+<p>The resulting figure will show two subplots, one for testing data and the other for training data, with the regression line plotted over the data points in both cases. This allows for a visual comparison between the performance of the simple linear regression model on the testing and training data.</p>
+<h4 id="calculate-error-metrics-on-the-testing-set">Calculate error metrics on the testing set</h4>
+<p>Calculating error metrics on the testing set is a crucial step in assessing how well a machine learning model performs on unseen data. Common metrics include Mean Absolute Error (MAE), Mean Squared Error (MSE) and R2-score for regression. These metrics help in model evaluation, comparison, and fine-tuning to build more accurate and reliable machine learning models.</p>
+<pre class="hljs"><code><div>mae_test = mean_absolute_error(slrm_y_test, slrm_y_test_pred)
+mse_test = mean_squared_error(slrm_y_test, slrm_y_test_pred)
+r2_test = r2_score(slrm_y_test, slrm_y_test_pred)
+</div></code></pre>
+<p><strong>Mean Absolute Error</strong> (MAE) is the mean of the absolute value of the errors:</p>
+<p>$$\frac 1n\sum_{i=1}^n|y_i-\hat{y}_i|$$</p>
+<pre class="hljs"><code><div>print(<span class="hljs-string">"Testing Set - Mean Absolute Error (MAE): {:.2f}"</span>.format(mae_test))
+</div></code></pre>
+<pre><code>Testing Set - Mean Absolute Error (MAE): 1.75
+</code></pre>
+<p><strong>Mean Squared Error</strong> (MSE) is the mean of the squared errors:</p>
+<p>$$\frac 1n\sum_{i=1}^n(y_i-\hat{y}_i)^2$$</p>
+<pre class="hljs"><code><div>print(<span class="hljs-string">"Testing Set - Mean Squared Error (MSE): {:.2f}"</span>.format(mse_test))
+</div></code></pre>
+<pre><code>Testing Set - Mean Squared Error (MSE): 4.66
+</code></pre>
+<p><strong>R-squared</strong> represents the proportion of the variance in the dependent variable</p>
+<p>$$1 - \frac{\sum (y_i - \bar{y})^2}{\sum (y_i - \hat{y}_i)^2}$$</p>
+<pre class="hljs"><code><div>print(<span class="hljs-string">"Testing Set - R-squared (coefficient of determination): {:.2f}"</span>.format(r2_test))
+</div></code></pre>
+<pre><code>Testing Set - R-squared (coefficient of determination): 0.82
+</code></pre>
+<p><a name="mlrm"></a></p>
+<h3 id="53-multi-linear-regression-model">5.3 Multi Linear Regression Model</h3>
+<p>MLRM (Multiple Linear Regression Model) is a statistical technique used to model the relationship between a dependent variable and two or more independent variables. The model assumes a linear relationship, and it can be represented as:</p>
+<p>$$y = \beta_0 + \beta_1 \cdot x_1 + \beta_2 \cdot x_2 + \ldots + \beta_n \cdot x_n + \varepsilon$$</p>
+<p>Where:</p>
+<ul>
+<li>$y$ is the dependent variable.</li>
+<li>$(x_1, x_2, \ldots, x_n)$ are the independent variables.</li>
+<li>$(\beta_0, \beta_1, \beta_2, \ldots, \beta_n)$ are the coefficients.</li>
+<li>$(\varepsilon)$ is the error term.</li>
+</ul>
+<p>Scikit-learn, a Python library, provides an easy-to-use implementation of MLRM through the <code>LinearRegression</code> class. You can create and train a model, estimate coefficients, and make predictions using this class.</p>
+<p>Train the Multiple Linear Regression Model:</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># Create a Multiple Linear Regression model</span>
+mlrm = LinearRegression()
+
+<span class="hljs-comment"># Fit the Multiple Linear Regression model to the training data</span>
+mlrm.fit(mlrm_X_train, mlrm_y_train)
+
+<span class="hljs-comment"># Calculate the R-squared score for the training data</span>
+train_score = mlrm.score(mlrm_X_train, mlrm_y_train)
+
+<span class="hljs-comment"># Calculate the R-squared score for the testing data</span>
+test_score = mlrm.score(mlrm_X_test, mlrm_y_test)
+</div></code></pre>
+<p>Final Function which is in form:
+$$f_{w,b}(x^{(i)}) = \sum_{n=1}^i(w^{(i)} x^{(i)}) + b $$</p>
+<p>Scikit-learn represents coefitients as <code>mlrm.coef_</code> and intercept as <code>mlrm.intercept_</code>
+so we can extract $f_{w,b}$ as:</p>
+<pre class="hljs"><code><div>coefficients = mlrm.coef_
+feature_names = mlrm_X.columns
+
+formula = <span class="hljs-string">"Final Grade = "</span>
+<span class="hljs-keyword">for</span> i, (coefficient, feature_name) <span class="hljs-keyword">in</span> enumerate(zip(coefficients, feature_names)):
+    <span class="hljs-keyword">if</span> i == <span class="hljs-number">0</span>:
+        formula += <span class="hljs-string">f"<span class="hljs-subst">{coefficient:<span class="hljs-number">.2</span>f}</span> * <span class="hljs-subst">{feature_name}</span>"</span>
+    <span class="hljs-keyword">else</span>:
+        formula += <span class="hljs-string">f" + <span class="hljs-subst">{coefficient:<span class="hljs-number">.2</span>f}</span> * <span class="hljs-subst">{feature_name}</span>"</span>
+
+<span class="hljs-comment"># Print the clean formula</span>
+print(<span class="hljs-string">f"<span class="hljs-subst">{formula}</span> + <span class="hljs-subst">{mlrm.intercept_:<span class="hljs-number">.2</span>f}</span>"</span>)
+</div></code></pre>
+<pre><code>Final Grade = 0.02 * HW1 + 0.01 * HW2 + 0.01 * HW3 + 0.02 * HW4 + 0.02 * HW5 + 0.02 * HW6 + 0.02 * HW7 + 0.02 * HW8 + 1.79 * mid + -0.02 * prof + -0.27
+</code></pre>
+<p>$$f_{w^{(i)},b}(x^{(i)}) = 0.02HW^{(1)} + 0.01HW^{(2)} + 0.01HW^{(3)} + 0.02HW^{(4)} + 0.02HW^{(5)} + 0.02HW^{(6)} + 0.02HW^{(7)} + 0.02HW^{(8)} + 1.79mid - 0.27$$</p>
+<p>Score the model</p>
+<p><strong>R-squared</strong> represents the proportion of the variance in the dependent variable</p>
+<p>$$1 - \frac{\sum (y_i - \bar{y})^2}{\sum (y_i - \hat{y}_i)^2}$$</p>
+<pre class="hljs"><code><div>print(<span class="hljs-string">"Testing R-squared score:"</span>, test_score)
+</div></code></pre>
+<pre><code>Testing R-squared score: 0.8826555536699574
+</code></pre>
+<h4 id="plotting-the-predicted-values-against-the-actual-values-in-the-test-set">Plotting the predicted values against the actual values in the test set</h4>
+<pre class="hljs"><code><div>plt.scatter(mlrm_X_test[<span class="hljs-string">'mid'</span>], mlrm_y_test, label=<span class="hljs-string">'Actual'</span>, color=<span class="hljs-string">'blue'</span>, alpha=<span class="hljs-number">0.5</span>)
+
+<span class="hljs-comment"># Sort the mid values to create a smooth curve</span>
+sorted_mid = mlrm_X_test[<span class="hljs-string">'mid'</span>].sort_values()
+
+<span class="hljs-comment"># Predict the final grades using the sorted mid values and plot the curve</span>
+plt.plot(sorted_mid, model.predict(pd.DataFrame(sorted_mid, columns=[<span class="hljs-string">'mid'</span>])), label=<span class="hljs-string">'MLRM'</span>, color=<span class="hljs-string">'red'</span>)
+
+plt.xlabel(<span class="hljs-string">'mid'</span>)
+plt.ylabel(<span class="hljs-string">'final'</span>)
+plt.title(<span class="hljs-string">'MLRM Function'</span>)
+plt.legend()
+plt.grid(<span class="hljs-literal">True</span>)
+plt.show()
+</div></code></pre>
+<p><img src="project_notebook_files/plots/project_notebook_108_0.png" alt="png"></p>
+<p>The resulting plot will show the actual final grades as blue points and the MLRM curve in red, representing the predicted final grades based on the 'mid' values. The smooth curve provides a visual representation of how the model predicts the 'final' grades as the 'mid' values change.</p>
+<p><a name="end"></a></p>
+<h2 id="6--conclusion">6- Conclusion</h2>
+<p><a name="results"></a></p>
+<h3 id="61-project-results">6.1 Project results</h3>
+<p>In conclusion, the research sheds light on the complex dynamics of student grades at Amirkabir University of Technology. The significant grade variability indicates the diverse academic abilities among students in general math 1. Although instructors have a limited direct impact, they can influence the likelihood of achieving higher grades, as seen in Dr. Najafi and Shariaty's classes. Additionally, the link between students' majors and grades reveals that Mathematics and challenging engineering disciplines lead to higher average grades, while Mining, Textile, and Marine Engineering exhibit lower averages. Additionally, the average final grade is lower among international students compared to native ones; however, international students with grades above 5 exhibit a well-distributed pattern among higher grades. These findings underline the importance of considering multiple factors, such as instructors and majors, to better understand and support student's academic achievements.</p>
+<p><a name="goalansw"></a></p>
+<h3 id="62-answer-to-goals">6.2 Answer to goals</h3>
+<h5 id="understanding-grade-distribution-of-students">Understanding Grade Distribution of Students.</h5>
+<pre><code>At Amirkabir University of Technology, the distribution of student grades in general math 1 shows significant variability, covering a wide range from 0 to 19.4. The average grade is 9.86, reflecting the central tendency, while the standard deviation of 4.9 indicates the spread or dispersion of the grades around the mean. This diverse distribution of grades suggests varying levels of performance and achievement among the students in the course.
+</code></pre>
+<h5 id="exploring-the-correlation-between-instructors-and-average-grades">Exploring the Correlation between Instructors and Average Grades.</h5>
+<pre><code>Although the instructor's direct impact on grading is relatively limited, the chance of passing and achieving higher grades is easier in Dr. Najafi and Shariaty's classes, while it is more challenging in Dr. Broojerdian and tavana's class.
+</code></pre>
+<h5 id="investigating-the-relationship-between-students-majors-and-grade-status">Investigating the Relationship Between Students' Majors and Grade Status.</h5>
+<pre><code>One significant difference found in valuable research achievements was the impact of the field of study on students' average grades. Students in the Faculty of Mathematics and challenging engineering disciplines had the highest average grades, with Electrical and Mechanical Engineering leading, while the lowest average grades were observed in Mining, Textile, and Marine Engineering.
+</code></pre>
+<h5 id="finding-the-relationships-between-international-and-native-students-grades">Finding the relationships between international and native students' grades.</h5>
+<pre><code>International students tend to have lower grades than native students. However, both groups show similar grade distributions for scores above 5, suggesting comparable academic performance in higher grades. These findings highlight the need to support international students initially and promote an inclusive environment for continued success.
+</code></pre>
+<h5 id="predicting-final-grades-based-on-midterm-and-homework-scores">Predicting Final Grades based on Midterm and Homework Scores.</h5>
+<pre><code>With the assistance of two machine learning models based on linear regression, namely SLRM (Simple Linear Regression) and MLRM (Multiple Linear Regression), we were able to provide formulas that enable us to predict students' grades before the final exam. These models have high accuracy in predicting grades, allowing us to make timely decisions regarding whether to drop or continue their courses.
+</code></pre>
+<h5 id="providing-a-clean-dataset-of-grades-for-future-research-purposes">Providing a Clean Dataset of Grades for Future Research Purposes.</h5>
+<pre><code>We have compiled and provided a clean dataset of grades, meticulously organized and free from errors or inconsistencies, specifically intended for future research purposes. This dataset serves as a valuable resource for researchers and educators seeking to analyze and explore various aspects of academic performance and related factors.
+</code></pre>
+<p><a name="more"></a>
+With the help of data processing, including data transfer from Excel to CSV, removal of redundant entries, standardization of the data frame into English, and elimination of non-numeric data, we have facilitated the ability for researchers to further examine the dataset more easily. Those interested in in-depth analysis can now delve into the data with greater ease and efficiency for their research purposes.</p>
+<p><strong>In addition to the initial analysis, we can further explore the data with the following potential items:</strong></p>
+<ul>
+<li>
+<p><strong>Fraud Detection based on Grade Records:</strong> Implementing algorithms and statistical methods to identify any anomalies or suspicious patterns in the grades data that might indicate academic fraud or misconduct.</p>
+</li>
+<li>
+<p><strong>Student Clustering:</strong> Utilizing clustering techniques to group students based on similar academic performance, study habits, or other relevant factors. This can provide valuable insights into different student profiles and help personalize educational approaches.</p>
+</li>
+<li>
+<p><strong>More Accurate Professors' Performance Analysis:</strong> Conducting a more comprehensive evaluation of professors' performance by identifying and handling unusual grade distributions. This can involve investigating grade inflation, grading consistency, and other factors affecting the quality of education.</p>
+</li>
+<li>
+<p><strong>Trend Analysis over Time:</strong> Analyzing the data across multiple academic years to uncover long-term trends and patterns in student performance, course popularity, and other relevant metrics.</p>
+</li>
+<li>
+<p><strong>Predictive Modeling:</strong> Building predictive models to forecast future student performance, course enrollments, or other key indicators. This can aid in proactive decision-making and resource planning.</p>
+</li>
+</ul>
+<p><a name="updt"></a></p>
+<h3 id="64-contact-and-update-project">6.4 Contact and Update project</h3>
+<p>To continue contributing to the project or explore opportunities for future collaborations, I invite you to actively participate by creating a pull request on the designated GitHub</p>
+<p>Repository: <a href="https://github.com/kooroshkz/math_grades_analysis">kooroshkz/math_grades_analysis</a></p>
+<p>Your contributions and feedback are highly valued, and together we can enhance the analysis and uncover valuable insights from the data.</p>
+<p>If you have any questions, suggestions, or innovative ideas, don't hesitate to reach out to me directly:</p>
+<p>Contact:</p>
+<p>Email: <a href="mailto:kkomeilizadeh@gmail.com">kkomeilizadeh@gmail.com</a></p>
+<p>Linkedin: <a href="https://www.linkedin.com/in/kooroshkz/">Koorosh Komeilizadeh</a></p>
+<p>I look forward to collaborating with you and making meaningful advancements in the project. Let's work together to excel in the realm of data analysis!</p>
+<h4 style="text-align: center">Thanks for your attention</h4>
+<h6 style="text-align: center">Proudly presented by Koorosh Komeilizade</h6>
+<h6 style="text-align: center">kooroshkz.com</h6>
+</body>
+</html>
