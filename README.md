@@ -46,7 +46,7 @@ Assistant Professor at AmirKabir University of Technology
     - [&nbsp;&nbsp;2.1 Import Data](#importdata)
     - [&nbsp;&nbsp;2.2 Data Cleaning](#clean)
     - [&nbsp;&nbsp;2.2 Data Output to CSV](#csvout)
-- [3 Data Visualisation](#visual)
+- [3 Data Visualization](#visual)
     - [&nbsp;&nbsp;3.1 Data Overview](#Overview)
     - [&nbsp;&nbsp;3.2 Grades by Professors](#gradbyp)
 - [4 Correlation of Clusters with Grades](#stu)
@@ -1005,7 +1005,7 @@ encoded_dict.to_csv('data_sets/prof_dict.csv', index=False)
 ```
 
 <a name="visual"></a>
-## 3- Data Visualisation
+## 3- Data Visualization
 Data visualization is a crucial aspect of data analysis, where complex and voluminous datasets are visually represented using charts, graphs, and other graphical elements. Through visualizations, data analysts can effectively communicate insights, patterns, and trends that might be challenging to discern from raw numbers alone. By presenting data in a visually appealing and intuitive manner, data visualization enables decision-makers to grasp key information quickly, make informed choices, and identify potential opportunities or challenges. It also aids in detecting outliers, understanding data distributions, and validating assumptions. From simple bar charts to intricate interactive dashboards, data visualization empowers analysts to extract meaningful knowledge from data, making it an indispensable tool in the data analysis process.
 
 <a name="Overview"></a>
